@@ -1,6 +1,6 @@
 # Selenium Examples in Java
 
-This project contains examples of Selenium tests written in Java. They were written using the [IntelliJ](https://www.jetbrains.com/idea/) IDE. [Maven](https://maven.apache.org/) handles the dependencies and builds
+This project contains examples of Selenium tests written in Java. They were written using the [IntelliJ](https://www.jetbrains.com/idea/) IDE. [Maven](https://maven.apache.org/) handles the dependencies and . The test framework used is [TestNG](http://testng.org/doc/)
 
 The tests are written against this test site - https://the-internet.herokuapp.com/ which was created by [tourdedave](https://github.com/tourdedave). You can find this repo here - https://github.com/tourdedave/the-internet
 
