@@ -21,7 +21,7 @@ public class LoginTests extends setup.SetUp
         login.checkLoginPage();
     }
 
-    @Test
+    @Test(priority = -1)
     // smoke test that the page can be accessed
     public void smokeTest() throws Exception
     {
