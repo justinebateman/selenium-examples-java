@@ -1,6 +1,10 @@
 import classes.Checkbox;
+import objrepo.CheckboxObjects;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 public class CheckboxTests extends setup.SetUp
 {
@@ -21,5 +25,21 @@ public class CheckboxTests extends setup.SetUp
     {
 
     }
-    
+
+    @Test
+    public void checkDefault()
+    {
+        // expected results - first checkbox should not be ticked on page load, second checkbox should be ticked
+        boolean expectedIsCheckbox1Ticked = false;
+        boolean expectedIsCheckbox2Ticked = true;
+        
+        // get the actual results
+        boolean actualIsCheckbox1Ticked = driver.findElement(CheckboxObjects.chkCheckbox1).isSelected();
+        boolean actualIsCheckbox2Ticked = driver.findElement(CheckboxObjects.chkCheckbox2).isSelected();
+
+        // compare expected and actual
+        assertThat(expectedIsCheckbox1Ticked, equalTo(actualIsCheckbox1Ticked));
+        assertThat(expectedIsCheckbox2Ticked, equalTo(actualIsCheckbox2Ticked));
+    }
+
 }
