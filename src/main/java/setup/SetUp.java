@@ -1,5 +1,6 @@
 package setup;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import common.Common;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -47,8 +48,9 @@ public class SetUp
         if (pPlatform.equals("XP"))
             capability.setPlatform(Platform.XP);
         else if (pPlatform.equals("WINDOWS"))
-            capability.setPlatform(Platform.WINDOWS);
+            capability.setPlatform(Platform.WIN10);
 
+        //capability.setVersion(BrowserVersion.getDefault());
         // start driver
         driver = new RemoteWebDriver(new URL(NODE_URL), capability);
         driver.manage().window().maximize();

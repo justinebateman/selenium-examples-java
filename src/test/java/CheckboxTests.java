@@ -32,8 +32,46 @@ public class CheckboxTests extends setup.SetUp
         // expected results - first checkbox should not be ticked on page load, second checkbox should be ticked
         boolean expectedIsCheckbox1Ticked = false;
         boolean expectedIsCheckbox2Ticked = true;
-        
+
         // get the actual results
+        boolean actualIsCheckbox1Ticked = driver.findElement(CheckboxObjects.chkCheckbox1).isSelected();
+        boolean actualIsCheckbox2Ticked = driver.findElement(CheckboxObjects.chkCheckbox2).isSelected();
+
+        // compare expected and actual
+        assertThat(expectedIsCheckbox1Ticked, equalTo(actualIsCheckbox1Ticked));
+        assertThat(expectedIsCheckbox2Ticked, equalTo(actualIsCheckbox2Ticked));
+    }
+
+    @Test
+    public void tickCheckbox()
+    {
+        // tick the checkbox
+        driver.findElement(CheckboxObjects.chkCheckbox1).click();
+
+        // expected results
+        boolean expectedIsCheckbox1Ticked = true;
+        boolean expectedIsCheckbox2Ticked = true;
+
+        // actual results
+        boolean actualIsCheckbox1Ticked = driver.findElement(CheckboxObjects.chkCheckbox1).isSelected();
+        boolean actualIsCheckbox2Ticked = driver.findElement(CheckboxObjects.chkCheckbox2).isSelected();
+
+        // compare expected and actual
+        assertThat(expectedIsCheckbox1Ticked, equalTo(actualIsCheckbox1Ticked));
+        assertThat(expectedIsCheckbox2Ticked, equalTo(actualIsCheckbox2Ticked));
+    }
+
+    @Test
+    public void unTickCheckbox()
+    {
+        // tick the checkbox
+        driver.findElement(CheckboxObjects.chkCheckbox2).click();
+
+        // expected results
+        boolean expectedIsCheckbox1Ticked = false;
+        boolean expectedIsCheckbox2Ticked = false;
+
+        // actual results
         boolean actualIsCheckbox1Ticked = driver.findElement(CheckboxObjects.chkCheckbox1).isSelected();
         boolean actualIsCheckbox2Ticked = driver.findElement(CheckboxObjects.chkCheckbox2).isSelected();
 
